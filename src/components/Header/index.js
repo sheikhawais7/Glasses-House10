@@ -26,10 +26,9 @@ export default function Header() {
                             <li className="nav-item">
                                 <Link to="/cart" className="nav-link active">Cart <sup>{cart.length == 0 ? "" : cart.length}</sup></Link>
                             </li>
-                            {/* <span className='text mt-3'>0</span> */}
                         </ul>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li className="nav-item ms-auto">
+                            <li className="nav-item">
                                 <Link to="/contact" className="nav-link active">Contact Us</Link>
                             </li>
                         </ul>
