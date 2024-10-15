@@ -133,7 +133,7 @@ export default function Cart() {
             <div className="container py-5">
               <div className="row">
                 <div className="col d-flex justify-content-center">
-                  <div id='cartCard' className="card p-5" style={{ minHeight: "565px", width: "50%"}}>
+                  <div id='cartCard' className="card p-5" style={{ minHeight: "565px"}}>
                     <form className='form'>
                       <h1 className='mt-5 text-center'>Buyer Detail</h1>
                       <label className='mb-' htmlFor="name">Name</label>

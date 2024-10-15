@@ -15,7 +15,7 @@ export default function Conatact() {
             <div className="container py-5">
                 <div className="row">
                     <div className="col d-flex justify-content-center">
-                        <div id='contactCard' className="card p-4" style={{ minHeight: "370px", width: "50%" }}>
+                        <div id='contactCard' className="card p-4" style={{ minHeight: "370px" }}>
                             <form className='form'>
                                 <label className='mb-1' htmlFor="email">Email</label>
                                 <input type="email" className='w-100' name="email" id="email" required />
@@ -32,7 +32,7 @@ export default function Conatact() {
             <div className="container pb-5">
                 <div className="row">
                     <div className="col d-flex justify-content-center">
-                        <div id='contactCard' className="card p-1" style={{ backgroundColor: "#fca311", minHeight: "250px", width: "50%" }}>
+                        <div id='contactCard' className="card p-1" style={{ backgroundColor: "#fca311", minHeight: "250px"}}>
                             <div className='text-center'>
                                 <h3 className='mt-5'>Get Connect With Me</h3>
                                 <p className='mt-3'>As you want</p>

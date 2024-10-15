@@ -88,13 +88,31 @@ body {
 ::-webkit-scrollbar {
     display: none;
 }
+#contactCard,#cartCard{
+    width: 50%;
+}
 
-@media screen and (max-width:"991px") {
+@media screen and (max-width:991px) {
+    #contactCard,#cartCard {
+        width: 60%;
+    }
+}
+@media screen and (max-width:770px) {
     #contactCard,#cartCard {
         width: 70%;
     }
 }
-@media screen and (max-width:"770px") {
+@media screen and (max-width:550px) {
+    #contactCard,#cartCard {
+        width: 80%;
+    }
+}
+@media screen and (max-width:490px) {
+    #contactCard,#cartCard {
+        width: 90%;
+    }
+}
+@media screen and (max-width:445px) {
     #contactCard,#cartCard {
         width: 100%;
     }
