@@ -59,6 +59,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-position: center;
 }
 
 .animation {
@@ -88,32 +89,77 @@ body {
 ::-webkit-scrollbar {
     display: none;
 }
-#contactCard,#cartCard{
+
+#contactCard,
+#cartCard {
     width: 50%;
 }
 
 @media screen and (max-width:991px) {
-    #contactCard,#cartCard {
+
+    #contactCard,
+    #cartCard {
         width: 60%;
     }
 }
+
 @media screen and (max-width:770px) {
-    #contactCard,#cartCard {
+
+    #contactCard,
+    #cartCard {
         width: 70%;
     }
 }
+
 @media screen and (max-width:550px) {
-    #contactCard,#cartCard {
+
+    #contactCard,
+    #cartCard {
         width: 80%;
     }
 }
+
 @media screen and (max-width:490px) {
-    #contactCard,#cartCard {
+
+    #contactCard,
+    #cartCard {
         width: 90%;
     }
 }
+
 @media screen and (max-width:445px) {
-    #contactCard,#cartCard {
+
+    #contactCard,
+    #cartCard {
         width: 100%;
     }
+}
+
+// ------------------HEADER HOVER----------------------------------------------------------------------
+
+a {
+    text-decoration: none;
+}
+
+.menu__link {
+    color: #fff;
+    line-height: 2;
+    position: relative;
+}
+
+.menu__link::before {
+    content: '';
+    width: 0;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -.25rem;
+    right: 0;
+    transition: right .4s, width .4s, left .4s;
+}
+
+.menu__link:hover::before {
+    width: 100%;
+    left: 0;
 }

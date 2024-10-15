@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { useCartContext } from '../../context/CartContext'
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
+import { message } from 'antd';
+const initialState = { fullName: "", email: "", address: "" }
 
 export default function Cart() {
 
   const { cart, setCart, removeFromCart } = useCartContext();
   const [sum, setSum] = useState(0)
+  const [state, setState] = useState(initialState)
 
   useEffect(() => {
     const totalSum = cart.reduce((acc, item) => acc + item.price * (item.quantity || 1), 0);
@@ -76,6 +79,33 @@ export default function Cart() {
     "textAlign": "center"
   }
 
+  const handleChange = e => {
+    setState({ ...state, [e.target.name]: e.target.value })
+  }
+  
+  const doneOrder = (e) => {
+    e.preventDefault();
+    let { fullName, email, address } = state
+    fullName = fullName.trim()
+    email = email.trim()
+    address = address.trim()
+    if(!fullName){
+      message.error("Please Enter Your Name")
+      return
+    }
+    console.log(fullName)
+    if(!email){
+      message.error("Please Enter Your Email")
+      return
+    }
+    if(!address){
+      message.error("Please Enter Your Address")
+      return
+    }
+    message.success("Order Done Successfully")
+    setCart([]);
+  }
+
   return (
     <>
       <div className="backImg">
@@ -133,15 +163,15 @@ export default function Cart() {
             <div className="container py-5">
               <div className="row">
                 <div className="col d-flex justify-content-center">
-                  <div id='cartCard' className="card p-5" style={{ minHeight: "565px"}}>
+                  <div id='cartCard' className="card p-5" style={{ minHeight: "565px" }}>
                     <form className='form'>
                       <h1 className='mt-5 text-center'>Buyer Detail</h1>
-                      <label className='mb-' htmlFor="name">Name</label>
-                      <input type="text" className='w-100' name="name" required />
+                      <label className='mb-1' htmlFor="name">Name</label>
+                      <input type="text" id='fullName' name="fullName"  className='w-100' onChange={handleChange} placeholder='Full Name'/>
                       <label className='mb-1 mt-3' htmlFor="email">Email</label>
-                      <input type="email" className='w-100' name="email" required />
+                      <input type="email" id='email' name="email" className='w-100' onChange={handleChange} placeholder='you@example.com'/>
                       <label className='mt-3 mb-1' htmlFor="msg">Address</label>
-                      <textarea name="" className='w-100 mt-1' rows={4} placeholder='   Your Address / Location ' required />
+                      <textarea name="address" id='address' onChange={handleChange} className='w-100 mt-1' rows={4} placeholder='   Your Address / Location '/>
                       {/* Cart Details */}
                       {
                         cart.length == 0
@@ -153,7 +183,7 @@ export default function Cart() {
                           </>
                       }
                       <div className="text-center">
-                        <button className="mt-4 border-0 rounded-5 py-2 px-3" style={{ backgroundColor: "#fca311" }}>Done Order</button>
+                        <button className="mt-4 border-0 rounded-5 py-2 px-3" onClick={doneOrder} style={{ backgroundColor: "#fca311" }}>Done Order</button>
                       </div>
                     </form>
                   </div>

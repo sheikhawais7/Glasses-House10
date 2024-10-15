@@ -11,25 +11,25 @@ export default function Header() {
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
                     <Link to="/"><img src={eyeImage} alt="" /></Link>
-                    <Link to="/" className="navbar-brand ms-2">Glasses House</Link>
+                    <Link to="/" className="navbar-brand menu__link ms-2">Glasses House</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link to="/eyeglasses" className="nav-link active">Eyeglasses</Link>
+                                <Link to="/eyeglasses" className="nav-link menu__link">Eyeglasses</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/sunglasses" className="nav-link active">Sunglasses</Link>
+                                <Link to="/sunglasses" className="nav-link menu__link">Sunglasses</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/cart" className="nav-link active">Cart <sup>{cart.length == 0 ? "" : cart.length}</sup></Link>
+                                <Link to="/cart" className="nav-link menu__link">Cart <sup>{cart.length == 0 ? "" : cart.length}</sup></Link>
                             </li>
                         </ul>
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link to="/contact" className="nav-link active">Contact Us</Link>
+                                <Link to="/contact" className="nav-link menu__link">Contact Us</Link>
                             </li>
                         </ul>
                     </div>

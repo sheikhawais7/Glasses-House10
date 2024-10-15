@@ -61,7 +61,7 @@ export default function Home() {
       <div className="backImg">
         <div className="animation">
           <h2 className='text-center'><b>Glasses House</b></h2>
-          <h1 className='text-white'>Get Stylish & Trendy Glasses</h1>
+          <h1 className='text-white text-center'>Get Stylish & Trendy Glasses</h1>
         </div>
       </div>
       <div className="container">
